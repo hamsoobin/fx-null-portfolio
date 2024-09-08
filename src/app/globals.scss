@@ -1,0 +1,259 @@
+@import "style/_common.scss";
+@import "style/_mixins.scss";
+
+// 제목체 - 오아고딕
+@font-face {
+  font-family: 'OAGothic-ExtraBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+  font-weight: $numbers-font-weight;
+  font-style: normal;
+}
+
+// 본문체 - 프리텐다드
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// 스크롤바
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: $color-dark;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $color-highlight;
+  border-radius: 4px;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Pretendard-Regular';
+  font-size: $numbers-text-s-size;
+  letter-spacing: $numbers-letter-spacing;
+  color: $color-light-gray;
+}
+
+// 페이지 전체
+.fn-layout {
+  width: 100%;
+}
+
+// 메인 섹션
+.fn-main-section {
+  width: 100%;
+  height: 905px;
+  background-color: #131313;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .fn-main-bg {
+    position: absolute;
+    width: 100%;
+    height: 905px;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+
+  .fn-header-area {
+    padding-top: 50px;
+    width: 65%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .fn-header-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .fn-logo {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-text-xl-size;
+        letter-spacing: $numbers-letter-title-spacing;
+        cursor: pointer;
+      }
+
+      .fn-logo:hover {
+        color: $color-light;
+        transition: all 0.4s;
+      }
+
+      .fn-text {
+        margin-left: 50px;
+        opacity: 0.3;
+      }
+    }
+
+    .fn-header-right {
+      font-size: $numbers-text-xs-size;
+      gap: 0 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .fn-menu {
+        color: $color-dark;
+        text-decoration: none;
+      }
+
+      .fn-menu:hover {
+        color: $color-highlight;
+        transition: all 0.4s;
+      }
+    }
+  }
+
+  .fn-main-title {
+    position: absolute;
+    bottom: 255px;
+    width: 65%;
+    font-family: 'OAGothic-ExtraBold';
+    color: $color-light;
+    font-weight: $numbers-font-weight;
+    font-size: $numbers-title;
+    letter-spacing: $numbers-letter-spacing;
+    line-height: 95px;
+  }
+
+  .arrow-down-btn {
+    position: absolute;
+    right: 70px;
+    bottom: 50px;
+    border: 1px solid $color-highlight;
+    border-radius: 50%;
+    padding: 20px;
+    opacity: 0.4;
+    cursor: pointer;
+
+    .arrow {
+      color: $color-highlight;
+    }
+  }
+
+  .arrow-down-btn:hover {
+    opacity: 1;
+    transition: all 0.4s;
+  }
+}
+
+// 자기소개 섹션
+.fn-introduction-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px 0 100px 0;
+
+  .fn-introduction-total {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    .fn-introduction-title {
+      display: flex;
+      flex-direction: column;
+
+      .fn-introduction-title-top {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-title;
+        letter-spacing: $numbers-letter-spacing;
+      }
+
+      .fn-introduction-title-bottom {
+        font-size: $numbers-text-m-size;
+        padding-left: 5px;
+        line-height: 22px;
+      }
+    }
+
+    .fn-introduction-contents {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 5px 0 0 50px;
+
+      .fn-introduction-contents-title {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-text-xxl-size;
+      }
+
+      .fn-introduction-contents-sub-title {
+        margin-top: 15px;
+        font-size: $numbers-text-m-size;
+      }
+
+      .fn-introduction-set {
+        margin: 70px 0 0 1px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 70px 120px;
+
+        .fn-introduction-item {
+
+          .fn-introduction-set-title {
+            font-size: $numbers-text-m-size;
+            font-weight: bold;
+            color: $color-gray;
+          }
+
+          .fn-introduction-set-comment {
+            margin-top: 10px;
+            font-size: $numbers-text-s-size;
+            line-height: 24px;
+          }
+
+          .fn-introduction-set-comment span {
+            font-weight: bold;
+            color: $color-semi-light-gray;
+          }
+
+          .fn-introduction-icon-row {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: row;
+            gap: 0 10px;
+
+            .fn-icon-border {
+              width: 50px;
+              height: 50px;
+              border: 2px solid $color-highlight;
+              border-radius: 25%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .fn-icon-border img {
+              width: 30px;
+            }
+
+            .fn-icon-border p {
+              font-weight: bold;
+              font-size: $numbers-text-l-size;
+              color: $color-highlight;
+            }
+          }
+        }
+      }
+    }
+  }
+}
