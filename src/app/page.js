@@ -3,6 +3,7 @@ import "@/app/style/reset.css"
 import "@/app/globals.scss"
 import Link from "next/link";
 import PortfolioSwiper from "@/app/components/PortfolioSwiper";
+import DesignPortfolioSwiper from "@/app/components/DesignPortfolioSwiper";
 
 export default function Home() {
     return (
@@ -14,7 +15,7 @@ export default function Home() {
         <body className="fn-layout">
 
         {/* 메인 섹션 */}
-        <section className="fn-main" id={"#main"}>
+        <section className="fn-main" id="main">
             <video className="fn-main-bg" autoPlay muted loop width="100%" height="905">
                 <source src="/assets/images/smog.mp4" type="video/mp4"/>
                 Your browser is not supported.
@@ -26,8 +27,8 @@ export default function Home() {
                 </div>
                 <ul className="fn-header-right">
                     <Link href={"#introduction"} className="fn-menu">INTRODUCTION</Link>
-                    <Link href={"/"} className="fn-menu">PORTFOLIO</Link>
-                    <Link href={"/"} className="fn-menu">DESIGN PORTFOLIO</Link>
+                    <Link href={"#portfolio"} className="fn-menu">PORTFOLIO</Link>
+                    <Link href={"/#design"} className="fn-menu">DESIGN PORTFOLIO</Link>
                     <Link href={"/"} className="fn-menu">STUDY</Link>
                     <Link href={"/"} className="fn-menu">CONTACT</Link>
                 </ul>
@@ -103,17 +104,17 @@ export default function Home() {
                                     <img src="/assets/images/java_logo.png"/>
                                 </div>
                                 <div className="fn-icon-border">
-                                    <p>Ps</p>
+                                    <img src="/assets/images/spring_boot_logo.png"/>
                                 </div>
                                 <div className="fn-icon-border">
-                                    <p>Ai</p>
+                                    <img src="/assets/images/docker_logo.png"/>
                                 </div>
                                 <div className="fn-icon-border">
-                                    <p>Ae</p>
+                                    <img src="/assets/images/postgresql_logo.png"/>
                                 </div>
                             </div>
                             <p className="fn-introduction-set-comment">
-                                <span>Sub Tool</span> Docker · Spring Boot · Restful API · Git
+                                <span>Sub Tool</span> Scss · Restful API · Git · Photoshop · Illustration
                             </p>
                         </div>
                     </div>
@@ -121,16 +122,25 @@ export default function Home() {
             </div>
         </section>
 
-        {/* 포트 폴리오 섹션 */}
-        <section className="fn_portfolio">
+        {/* 포트폴리오 섹션 */}
+        <section className="fn_portfolio" id="portfolio">
             <div className="fn-portfolio-contents">
                 <div className="fn-portfolio-title-area">
                     <p className="fn-portfolio-title">PORTFOLIO.</p>
                     <p className="fn-portfolio-sub-title">프론트엔드 개발 포트폴리오입니다.</p>
                 </div>
+                <PortfolioSwiper/>
+            </div>
+        </section>
 
-                    <PortfolioSwiper/>
-
+        {/* 디자인 포트폴리오 섹션 */}
+        <section className="fn-design" id="design">
+            <div className="fn-design-contents">
+                <div className="fn-design-title-area">
+                    <p className="fn-design-title">DESIGN PORTFOLIO.</p>
+                    <p className="fn-design-sub-title">웹 디자인 포트폴리오입니다.</p>
+                </div>
+                <DesignPortfolioSwiper/>
             </div>
         </section>
         </body>

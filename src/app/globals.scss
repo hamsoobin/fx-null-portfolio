@@ -260,6 +260,7 @@ body {
   }
 }
 
+// 포트폴리오 섹션
 .fn_portfolio {
   width: 100%;
   padding: 100px 0 100px 0;
@@ -429,6 +430,60 @@ body {
 
           .fn-kd {
             width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+//디자인 포트폴리오 섹션
+.fn-design {
+  width: 100%;
+  padding: 100px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .fn-design-contents {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+
+    .fn-design-title-area {
+      .fn-design-title {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-text-xxl-size;
+      }
+
+      .fn-design-sub-title {
+        margin-top: 15px;
+        font-size: $numbers-text-m-size;
+        color: $color-dark;
+      }
+    }
+
+    .fn-swiper {
+      width: 100%;
+
+      .fn-portfolio-slide {
+        width: 100%;
+
+        .fn-design-swiper-item {
+          margin-top: 30px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .fn-design-swiper {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(1, 1, 1, 0.1);
           }
         }
       }
