@@ -45,10 +45,10 @@ body {
 }
 
 // 메인 섹션
-.fn-main-section {
+.fn-main {
   width: 100%;
   height: 905px;
-  background-color: #131313;
+  background-color: $color-black;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@ body {
     width: 100%;
     height: 905px;
     object-fit: cover;
-    opacity: 0.4;
+    opacity: 0.3;
   }
 
   .fn-header-area {
@@ -83,6 +83,7 @@ body {
         font-weight: $numbers-font-weight;
         font-size: $numbers-text-xl-size;
         letter-spacing: $numbers-letter-title-spacing;
+        text-decoration-line: none;
         cursor: pointer;
       }
 
@@ -150,7 +151,7 @@ body {
 }
 
 // 자기소개 섹션
-.fn-introduction-section {
+.fn-introduction {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -205,9 +206,10 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 70px 120px;
+        gap: 70px 100px;
 
         .fn-introduction-item {
+          width: 410px;
 
           .fn-introduction-set-title {
             font-size: $numbers-text-m-size;
@@ -251,6 +253,182 @@ body {
               font-size: $numbers-text-l-size;
               color: $color-highlight;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fn_portfolio {
+  width: 100%;
+  padding: 100px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-black;
+
+  .fn-portfolio-contents {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .fn-portfolio-title-area {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .fn-portfolio-title {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-text-xxl-size;
+      }
+
+      .fn-portfolio-sub-title {
+        margin-top: 15px;
+        font-size: $numbers-text-m-size;
+        color: $color-dark;
+      }
+    }
+
+    .fn-swiper {
+      width: 100%;
+
+      .fn-portfolio-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .fn-portfolio-slide-item {
+          width: 80%;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .fn-video-box {
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%; /* 가장 중요 */
+            position: relative;
+          }
+
+          .fn-video-box iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          .fn-portfolio-info {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: start;
+            width: 100%;
+            gap: 0 40px;
+
+            .fn-portfolio-info-row {
+              width: 470px;
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+
+              .fn-portfolio-info-title {
+                margin-top: 20px;
+                font-size: $numbers-text-m-size;
+                color: $color-light;
+                font-weight: bold;
+              }
+
+              .fn-portfolio-info-content {
+                margin-top: 15px;
+                line-height: 26px;
+
+                .fn-git {
+                  display: flex;
+                  align-items: center;
+                  cursor: pointer;
+                  text-decoration: none;
+                  color: $color-light-gray;
+                }
+
+                .fn-git:hover {
+                  color: $color-highlight;
+                  transition: all 0.3s;
+                }
+
+                .fn-git img {
+                  width: 20px;
+                  margin-right: 5px;
+                }
+
+                .fn-git span {
+                  font-weight: bold;
+                }
+              }
+
+              .fn-portfolio-info-content span {
+                font-weight: bold;
+              }
+
+              .fn-portfolio-skill {
+                gap: 0 5px;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: row;
+
+                .fn-skill-border {
+                  border: 2px solid $color-mattdak;
+                  border-radius: 25%;
+                  width: 50px;
+                  height: 50px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .fn-skill-border img {
+                  width: 30px;
+                }
+
+                .fn-skill-border-2 {
+                  border: 2px solid $color-wone;
+                  border-radius: 25%;
+                  width: 50px;
+                  height: 50px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .fn-skill-border-2 img {
+                  width: 30px;
+                }
+
+                .fn-skill-border-3 {
+                  border: 2px solid $color-kioskku;
+                  border-radius: 25%;
+                  width: 50px;
+                  height: 50px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .fn-skill-border-3 img {
+                  width: 30px;
+                }
+              }
+            }
+          }
+
+          .fn-kd {
+            width: 100%;
           }
         }
       }

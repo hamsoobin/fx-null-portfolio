@@ -2,6 +2,7 @@ import React from 'react'
 import "@/app/style/reset.css"
 import "@/app/globals.scss"
 import Link from "next/link";
+import PortfolioSwiper from "@/app/components/PortfolioSwiper";
 
 export default function Home() {
     return (
@@ -11,15 +12,16 @@ export default function Home() {
             <title>FXNULL</title>
         </head>
         <body className="fn-layout">
+
         {/* 메인 섹션 */}
-        <section className="fn-main-section">
+        <section className="fn-main" id={"#main"}>
             <video className="fn-main-bg" autoPlay muted loop width="100%" height="905">
                 <source src="/assets/images/smog.mp4" type="video/mp4"/>
                 Your browser is not supported.
             </video>
             <header className="fn-header-area">
                 <div className="fn-header-left">
-                    <p className="fn-logo">FXNULL .</p>
+                    <Link href={"#main"} className="fn-logo">FXNULL .</Link>
                     <p className="fn-text">2024 PORTFOLIO</p>
                 </div>
                 <ul className="fn-header-right">
@@ -47,7 +49,7 @@ export default function Home() {
         </section>
 
         {/* 자기소개 섹션 */}
-        <section className="fn-introduction-section" id="introduction">
+        <section className="fn-introduction" id="introduction">
             <div className="fn-introduction-total">
                 <div className="fn-introduction-title">
                     <p className="fn-introduction-title-top">IM.</p>
@@ -72,22 +74,22 @@ export default function Home() {
                             <p className="fn-introduction-set-title">감각적인 프론트엔드 개발자</p>
                             <p className="fn-introduction-set-comment">
                                 디자이너 출신 프론트엔드 개발자로서 이전의 경험을 바탕으로
-                                <br/>디자인적 감각과 프로그래밍 지식을 모두 활용하여 UI/UX를 최적화하고
-                                <br/>사용자 경험을 향상시키는 데 큰 도움을 줄 수 있습니다.
+                                디자인적 감각과 프로그래밍 지식을 모두 활용하여 UI/UX를 최적화하고
+                                사용자 경험을 향상시키는 데 큰 도움을 줄 수 있습니다.
                             </p>
                         </div>
                         <div className="fn-introduction-item">
                             <p className="fn-introduction-set-title">꾸준히 탐구하기</p>
                             <p className="fn-introduction-set-comment">
                                 개발을 배운 뒤 프론트엔드 기술의 트렌드 변화가 빠르다는 것을
-                                <br/>깨달았습니다. 따라서 한 가지 기술에 국한되지 않고 <span>다양한 기술을
-                                <br/>꾸준히 학습</span>하며, 기술 블로그 또는 커뮤니티를 통해
-                                <br/><span>최신 프론트엔드 기술 트렌드를 꾸준히 탐구</span>할 것입니다.
+                                깨달았습니다. 따라서 한 가지 기술에 국한되지 않고 <span>다양한 기술을
+                                꾸준히 학습</span>하며, 기술 블로그 또는 커뮤니티를 통해
+                                <span>최신 프론트엔드 기술 트렌드를 꾸준히 탐구</span>할 것입니다.
                             </p>
                         </div>
                         <div className="fn-introduction-item">
                             <p className="fn-introduction-set-title">할 수 있어요!</p>
-                            <p className="fn-introduction-icon-row">
+                            <div className="fn-introduction-icon-row">
                                 <div className="fn-icon-border">
                                     <img src="/assets/images/nextjs_logo.png"/>
                                 </div>
@@ -109,13 +111,26 @@ export default function Home() {
                                 <div className="fn-icon-border">
                                     <p>Ae</p>
                                 </div>
-                            </p>
+                            </div>
                             <p className="fn-introduction-set-comment">
                                 <span>Sub Tool</span> Docker · Spring Boot · Restful API · Git
                             </p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        {/* 포트 폴리오 섹션 */}
+        <section className="fn_portfolio">
+            <div className="fn-portfolio-contents">
+                <div className="fn-portfolio-title-area">
+                    <p className="fn-portfolio-title">PORTFOLIO.</p>
+                    <p className="fn-portfolio-sub-title">프론트엔드 개발 포트폴리오입니다.</p>
+                </div>
+
+                    <PortfolioSwiper/>
+
             </div>
         </section>
         </body>
