@@ -1,6 +1,6 @@
 'use client'
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Pagination, Scrollbar, Mousewheel, A11y} from "swiper/modules";
+import {Navigation, Pagination, Scrollbar, A11y} from "swiper/modules";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,14 +11,13 @@ const PortfolioSwiper = () => {
     return (
         <div className="fn-swiper">
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, Mousewheel, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
                 slidesPerView={1} // 보여질 개수
                 threshold={100} // 마우스, 스와이프 민감도
                 loop={true} // 무한반복
                 autoplay={false}
-                navigation
                 centeredSlides={true}
-
+                navigation={true}
                 pagination={{
                     clickable: true,
                     el: '.pagination'

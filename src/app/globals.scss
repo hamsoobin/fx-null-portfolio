@@ -44,6 +44,37 @@ body {
   width: 100%;
 }
 
+// top 버튼
+.fn-top-align {
+  position: fixed;
+  bottom: 50px;
+  right: 70px;
+  display: flex;
+  justify-content: end;
+
+  .fn-top-btn {
+    width: 60px;
+    height: 60px;
+    background: $color-light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    .fn-top-text {
+      text-decoration: none;
+      color: $color-light;
+      font-size: 0.825rem;
+    }
+  }
+
+  .fn-top-btn:hover {
+    background: $color-highlight;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
 // 메인 섹션
 .fn-main {
   width: 100%;
@@ -53,6 +84,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 
   .fn-main-bg {
     position: absolute;
@@ -75,6 +107,7 @@ body {
     .fn-header-left {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       align-items: center;
 
       .fn-logo {
@@ -206,10 +239,10 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 70px 100px;
+        gap: 70px 40px;
 
         .fn-introduction-item {
-          width: 410px;
+          width: 45%;
 
           .fn-introduction-set-title {
             font-size: $numbers-text-m-size;
@@ -232,11 +265,10 @@ body {
             margin-top: 12px;
             display: flex;
             flex-direction: row;
-            gap: 0 10px;
+            gap: 0 8px;
 
             .fn-icon-border {
-              width: 50px;
-              height: 50px;
+              padding: 8px;
               border: 2px solid $color-highlight;
               border-radius: 25%;
               display: flex;
@@ -437,7 +469,7 @@ body {
   }
 }
 
-//디자인 포트폴리오 섹션
+// 디자인 포트폴리오 섹션
 .fn-design {
   width: 100%;
   padding: 100px 0 100px 0;
@@ -484,6 +516,198 @@ body {
             flex-direction: column;
             align-items: center;
             box-shadow: 0 0 15px rgba(1, 1, 1, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// 스터디 섹션
+.fn-study {
+  width: 100%;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .fn-study-contents {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+
+    .fn-study-title-area {
+      display: flex;
+      flex-direction: column;
+
+      .fn-study-title {
+        font-family: 'OAGothic-ExtraBold';
+        color: $color-highlight;
+        font-weight: $numbers-font-weight;
+        font-size: $numbers-text-xxl-size;
+      }
+
+      .fn-study-sub-title {
+        margin-top: 15px;
+        font-size: $numbers-text-m-size;
+        color: $color-dark;
+      }
+    }
+
+    .fn-study-contents-row {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+
+      .fn-me {
+        width: 40%;
+        border-radius: 50%;
+      }
+
+      .fn-study-right {
+        width: 40%;
+        margin-left: 70px;
+
+        .fn-study-comment-area {
+          padding-bottom: 30px;
+          border-bottom: 1px solid $color-light-gray;
+
+          .fn-study-comment-title {
+            font-family: 'Pretendard-Regular';
+            color: $color-highlight;
+            font-weight: $numbers-font-weight;
+            font-size: $numbers-text-l-size;
+          }
+
+          .fn-study-comment {
+            margin-top: 15px;
+            line-height: 26px;
+          }
+        }
+
+        .fn-portfolio-link {
+          padding-top: 30px;
+
+          .fn-portfolio-link-title {
+            font-family: 'Pretendard-Regular';
+            color: $color-highlight;
+            font-weight: $numbers-font-weight;
+            font-size: $numbers-text-l-size;
+          }
+
+          .fn-icon-align {
+            display: flex;
+            flex-direction: row;
+            margin-top: 15px;
+            gap: 0 20px;
+
+            .fn-icon {
+              width: 110px;
+              height: 110px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background-color: $color-cloudy;
+              border-radius: 50%;
+              cursor: pointer;
+
+              .fn-icon-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration-line: none;
+
+                .fn-icon-svg {
+                  color: $color-gray;
+                }
+
+                .fn-icon-text {
+                  margin-top: 5px;
+                  color: $color-gray;
+                }
+              }
+            }
+
+            .fn-icon:hover {
+              background-color: $color-highlight;
+              transition: all 0.5s ease-in-out;
+
+              .fn-icon-btn {
+
+                .fn-icon-svg {
+                  color: $color-light;
+                }
+
+                .fn-icon-text {
+                  color: $color-light;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 푸터
+.fn-footer {
+  width: 100%;
+  padding: 100px 0 100px 0;
+  background-color: $color-cloudy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .fn-footer-contents {
+    width: 65%;
+
+    .fn-footer-logo {
+      font-family: 'OAGothic-ExtraBold';
+      color: $color-light-gray;
+      font-weight: $numbers-font-weight;
+      font-size: $numbers-text-xl-size;
+      letter-spacing: $numbers-letter-title-spacing;
+      text-decoration-line: none;
+      cursor: pointer;
+    }
+
+    .fn-footer-logo:hover {
+      color: $color-highlight;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .fn-footer-text {
+      margin-top: 8px;
+    }
+  }
+}
+
+// 노트북일 때
+@include laptop {
+
+  // 메인 섹션
+  .fn-main {
+    .fn-header-area {
+      width: 80%;
+    }
+
+    .fn-main-title {
+      width: 80%;
+    }
+  }
+
+  // 자기소개 섹션
+  .fn-introduction {
+    .fn-introduction-total {
+      width: 80%;
+
+      .fn-introduction-contents {
+        .fn-introduction-set {
+          .fn-introduction-item {
+            width: 80%;
           }
         }
       }
