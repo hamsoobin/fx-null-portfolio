@@ -11,7 +11,7 @@ import {useEffect, useState} from "react";
 const PortfolioSwiper = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768) // 모바일 너비
 
-    const currentURL = typeof window !== 'undefined' ? window.location.href : "";
+    const isWindow = typeof window !== 'undefined';
 
     useEffect(() => {
         const handleResize = () => {
@@ -24,7 +24,7 @@ const PortfolioSwiper = () => {
 
     return (
         <div className="fn-swiper">
-            {isMobile && currentURL ? (
+            {isMobile && isWindow ? (
                 <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 slidesPerView={1} // 보여질 개수
