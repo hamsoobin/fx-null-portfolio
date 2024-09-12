@@ -6,25 +6,20 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import {useEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 
 const DesignPortfolioSwiper = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768) // 모바일 너비
+    const [isMobile, setIsMobile] = useState(false) // 모바일 너비
 
-    const isWindow = typeof window !== 'undefined';
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+    useLayoutEffect(() => {
+        const isMobile = window.innerWidth <= 768; // 모바일 기준은 임의로 설정
+        setIsMobile(isMobile)
     }, [])
 
     return (
         <div className="fn-swiper">
-            {isMobile && isWindow ? (
+            {isMobile ? (
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     slidesPerView={1} // 보여질 개수

@@ -1,21 +1,15 @@
 'use client'
 import Link from "next/link";
-import React, {useEffect, useState} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import MobileMenuModal from "@/app/components/MobileMenuModal";
 
 const DefaultLayout = ({children}) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768) // 모바일 너비
+    const [isMobile, setIsMobile] = useState(false) // 모바일 너비
     const [showMenuModal, setShowMenuModal] = useState(false) // 회원 모달 버튼 클릭 유무
 
-    const isWindow = typeof window !== 'undefined';
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+    useLayoutEffect(() => {
+        const isMobile = window.innerWidth <= 768; // 모바일 기준은 임의로 설정
+        setIsMobile(isMobile)
     }, [])
 
     const clickMenuModal = () => setShowMenuModal(!showMenuModal)
@@ -34,7 +28,7 @@ const DefaultLayout = ({children}) => {
                         <Link href={"#main"} className="fn-logo">FXNULL .</Link>
                         <p className="fn-text">2024 PORTFOLIO</p>
                     </div>
-                    {isMobile && isWindow ? (
+                    {isMobile ? (
                         <>
                             <div className="fn-header-right" onClick={clickMenuModal}>☰</div>
                             {showMenuModal && <MobileMenuModal clickMenuModal={clickMenuModal} />}
