@@ -4,11 +4,11 @@ import React, {useLayoutEffect, useState} from "react";
 import MobileMenuModal from "@/app/components/MobileMenuModal";
 
 const DefaultLayout = ({children}) => {
-    const [isMobile, setIsMobile] = useState(false) // 모바일 너비
+    const [isMobile, setIsMobile] = useState(false)
     const [showMenuModal, setShowMenuModal] = useState(false) // 회원 모달 버튼 클릭 유무
 
     useLayoutEffect(() => {
-        const isMobile = window.innerWidth <= 768; // 모바일 기준은 임의로 설정
+        const isMobile = window.innerWidth <= 768;
         setIsMobile(isMobile)
     }, [])
 

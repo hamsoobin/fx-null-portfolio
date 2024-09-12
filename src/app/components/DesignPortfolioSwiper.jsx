@@ -9,11 +9,11 @@ import 'swiper/css/scrollbar';
 import {useLayoutEffect, useState} from "react";
 
 const DesignPortfolioSwiper = () => {
-    const [isMobile, setIsMobile] = useState(false) // 모바일 너비
+    const [isMobile, setIsMobile] = useState(false)
 
 
     useLayoutEffect(() => {
-        const isMobile = window.innerWidth <= 768; // 모바일 기준은 임의로 설정
+        const isMobile = window.innerWidth <= 768;
         setIsMobile(isMobile)
     }, [])
 

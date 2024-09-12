@@ -9,10 +9,10 @@ import 'swiper/css/scrollbar';
 import {useLayoutEffect, useState} from "react";
 
 const PortfolioSwiper = () => {
-    const [isMobile, setIsMobile] = useState(false) // 모바일 너비
+    const [isMobile, setIsMobile] = useState(false)
 
     useLayoutEffect(() => {
-        const isMobile = window.innerWidth <= 768; // 모바일 기준은 임의로 설정
+        const isMobile = window.innerWidth <= 768;
         setIsMobile(isMobile)
     }, [])
 
@@ -49,7 +49,6 @@ const PortfolioSwiper = () => {
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
-
                         <div className="fn-portfolio-info">
                             <div className="fn-portfolio-info-row">
                                 <p className="fn-portfolio-info-title">맛딱드림 배달 라이더 전용 앱</p>

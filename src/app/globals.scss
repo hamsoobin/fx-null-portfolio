@@ -427,8 +427,7 @@ body {
                 .fn-skill-border {
                   border: 2px solid $color-mattdak;
                   border-radius: 25%;
-                  width: 50px;
-                  height: 50px;
+                  padding: 10px;
                   display: flex;
                   justify-content: center;
                   align-items: center;
@@ -848,6 +847,7 @@ body {
 
 // 모바일일 때
 @include mobile {
+
   // 탑 버튼
   .fn-top-align {
     right: 40px;
@@ -855,26 +855,41 @@ body {
 
   // 메인 섹션
   .fn-main {
+    height: 700px;
+
+    .fn-main-bg {
+      height: 700px;
+      width: 100%;
+    }
+
     .fn-main-title {
       font-size: $numbers-title-mo;
-      line-height: 80px;
-      bottom: 280px;
+      line-height: 65px;
+      bottom: 250px;
     }
 
     .arrow-down-btn {
+      padding: 15px;
       right: 40px;
+      bottom: 70px;
     }
   }
 
   // 헤더
   .fn-header-area {
+    padding-top: 20px;
     .fn-header-align {
       display: flex;
       flex-direction: row;
       align-items: end;
 
       .fn-header-left {
+        .fn-logo {
+          font-size: $numbers-text-l-size;
+        }
+
         .fn-text {
+          font-size: $numbers-text-xs-size;
           margin-left: 10px;
         }
       }
@@ -934,9 +949,34 @@ body {
       display: flex;
       flex-direction: column;
 
+      .fn-introduction-contents-title {
+        line-height: 40px;
+      }
+
+      .fn-introduction-contents-sub-title {
+        line-height: 25px;
+      }
+
       .fn-introduction-contents {
         width: 100%;
         padding: 30px 0 0;
+
+        .fn-introduction-set {
+          .fn-introduction-item {
+            .fn-introduction-icon-row {
+              flex-wrap: wrap;
+              gap: 8px 8px;
+
+              .fn-icon-border {
+                padding: 8px;
+              }
+
+              .fn-icon-border img {
+                width: 30px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -948,6 +988,24 @@ body {
         .fn-portfolio-slide {
           .fn-portfolio-slide-item {
             width: 100%;
+            gap: 15px 8px;
+
+            .fn-portfolio-info {
+              gap: 15px 8px;
+              .fn-portfolio-info-row {
+                .fn-portfolio-skill {
+                  flex-wrap: wrap;
+                  gap: 8px 8px;
+
+                  .fn-skill-border{
+                    padding: 8px;
+                  }
+                  .fn-skill-border img {
+                    width: 30px;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -957,6 +1015,12 @@ body {
   // 디자인 포트폴리오 섹션
   .fn-design {
     .fn-design-contents {
+      .fn-design-title-area {
+        .fn-design-title {
+          line-height: 40px;
+        }
+      }
+
       .fn-swiper {
         .fn-portfolio-slide {
           .fn-design-swiper-item {
@@ -971,6 +1035,7 @@ body {
     }
   }
 
+  // 스터디 섹션
   .fn-study {
     .fn-study-contents {
       .fn-study-contents-row {

@@ -50,7 +50,7 @@ export default function Home() {
                                 <p className="fn-introduction-set-comment">
                                     이름의 <span>{"'함수'"}</span>와 <span>{"'빈'"}</span>에서 비롯하여 탄생한 개발명 Fx_null입니다!
                                     <br/>null의 뜻이 <span>{"'아무것도 존재 하지 않는다'"}</span>라는 뜻이지만
-                                    <br/>앞으로 부족한 부분을 채워가며 <span>무궁무진하게 성장하겠습니다.</span>
+                                    앞으로 부족한 부분을 채워가며 <span>무궁무진하게 성장하겠습니다.</span>
                                 </p>
                             </div>
                             <div className="fn-introduction-item">
