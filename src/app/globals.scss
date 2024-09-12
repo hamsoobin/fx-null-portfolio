@@ -46,6 +46,7 @@ body {
 
 // top 버튼
 .fn-top-align {
+  z-index: 1;
   position: fixed;
   bottom: 50px;
   right: 70px;
@@ -75,34 +76,22 @@ body {
   }
 }
 
-// 메인 섹션
-.fn-main {
+// 헤더
+.fn-header-area {
+  padding-top: 50px;
   width: 100%;
-  height: 905px;
-  background-color: $color-black;
-  position: relative;
+  position: absolute;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 3;
 
-  .fn-main-bg {
-    position: absolute;
-    width: 100%;
-    height: 905px;
-    object-fit: cover;
-    opacity: 0.3;
-  }
-
-  .fn-header-area {
-    padding-top: 50px;
+  .fn-header-align {
     width: 65%;
-    position: absolute;
-    top: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 
     .fn-header-left {
       display: flex;
@@ -148,6 +137,26 @@ body {
         transition: all 0.4s;
       }
     }
+  }
+}
+
+// 메인 섹션
+.fn-main {
+  width: 100%;
+  height: 905px;
+  background-color: $color-black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+
+  .fn-main-bg {
+    position: absolute;
+    width: 100%;
+    height: 905px;
+    object-fit: cover;
+    opacity: 0.3;
   }
 
   .fn-main-title {
@@ -602,8 +611,7 @@ body {
             gap: 0 20px;
 
             .fn-icon {
-              width: 110px;
-              height: 110px;
+              padding: 20px;
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -687,12 +695,15 @@ body {
 
 // 노트북일 때
 @include laptop {
+  // 헤더
+  .fn-header-area {
+    .fn-header-align {
+      width: 80%;
+    }
+  }
 
   // 메인 섹션
   .fn-main {
-    .fn-header-area {
-      width: 80%;
-    }
 
     .fn-main-title {
       width: 80%;
@@ -708,6 +719,268 @@ body {
         .fn-introduction-set {
           .fn-introduction-item {
             width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  // 포트폴리오 섹션
+  .fn_portfolio {
+    .fn-portfolio-contents {
+      width: 80%;
+
+      .fn-swiper {
+        .fn-portfolio-slide {
+          .fn-portfolio-slide-item {
+            .fn-portfolio-info {
+              .fn-portfolio-info-row {
+                width: 80%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 디자인 포트폴리오 섹션
+  .fn-design{
+
+   .fn-design-contents{
+      width: 80%;
+   }
+  }
+
+  // 스터디 섹션
+  .fn-study {
+    .fn-study-contents {
+      width: 80%;
+
+      .fn-study-contents-row {
+        .fn-me {
+          width: 50%;
+        }
+
+        .fn-study-right {
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  // 푸터
+  .fn-footer {
+    .fn-footer-contents {
+      width: 80%;
+    }
+  }
+}
+
+// 타블렛일 때
+@include tablet {
+  // 헤더
+  .fn-header-area {
+    .fn-header-align {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .fn-header-right {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  // 자기소개 섹션
+  .fn-introduction {
+    .fn-introduction-total {
+      .fn-introduction-contents {
+        .fn-introduction-set {
+          .fn-introduction-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // 포트폴리오 섹션
+  .fn_portfolio {
+    .fn-portfolio-contents {
+      .fn-swiper {
+        .fn-portfolio-slide {
+          .fn-portfolio-slide-item {
+            .fn-portfolio-info {
+              .fn-portfolio-info-row {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 스터디 섹션
+  .fn-study {
+    .fn-study-contents {
+      .fn-study-contents-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .fn-me {
+          width: 60%;
+          height: 60%;
+        }
+
+        .fn-study-right {
+          margin-top: 30px;
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// 모바일일 때
+@include mobile {
+  // 탑 버튼
+  .fn-top-align {
+    right: 40px;
+  }
+
+  // 메인 섹션
+  .fn-main {
+    .fn-main-title {
+      font-size: $numbers-title-mo;
+      line-height: 80px;
+      bottom: 280px;
+    }
+
+    .arrow-down-btn {
+      right: 40px;
+    }
+  }
+
+  // 헤더
+  .fn-header-area {
+    .fn-header-align {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+
+      .fn-header-left {
+        .fn-text {
+          margin-left: 10px;
+        }
+      }
+
+      .fn-header-right {
+        font-family: 'OAGothic-ExtraBold';
+        font-size: $numbers-text-l-size;
+        color: $color-semi-light-gray;
+        cursor: pointer;
+      }
+
+      .fn-header-right:hover {
+        color: $color-highlight;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .fn-modal-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: end;
+        align-items: start;
+
+        .fn-modal-menu {
+          background-color: $color-cloudy;
+          height: 100%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+
+          .fn-menu {
+            padding-left: 30px;
+            text-decoration-line: none;
+            color: $color-gray;
+            line-height: 50px;
+            border-bottom: #dadada solid 1px;
+          }
+
+          .fn-menu:hover {
+            color: $color-highlight;
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  // 자기소개 섹션
+  .fn-introduction {
+    padding: 100px 0 100px 0;
+
+    .fn-introduction-total {
+      display: flex;
+      flex-direction: column;
+
+      .fn-introduction-contents {
+        width: 100%;
+        padding: 30px 0 0;
+      }
+    }
+  }
+
+  // 포트폴리오 섹션
+  .fn_portfolio {
+    .fn-portfolio-contents {
+      .fn-swiper {
+        .fn-portfolio-slide {
+          .fn-portfolio-slide-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  // 디자인 포트폴리오 섹션
+  .fn-design {
+    .fn-design-contents {
+      .fn-swiper {
+        .fn-portfolio-slide {
+          .fn-design-swiper-item {
+            width: 100%;
+
+            .fn-design-swiper {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fn-study {
+    .fn-study-contents {
+      .fn-study-contents-row {
+        .fn-me {
+          width: 80%;
+        }
+
+        .fn-study-right {
+          .fn-study-comment-area {
+            margin-top: 20px;
           }
         }
       }
