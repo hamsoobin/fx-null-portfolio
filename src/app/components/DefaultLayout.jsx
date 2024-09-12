@@ -7,6 +7,8 @@ const DefaultLayout = ({children}) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768) // 모바일 너비
     const [showMenuModal, setShowMenuModal] = useState(false) // 회원 모달 버튼 클릭 유무
 
+    const currentURL = typeof window !== 'undefined' ? window.location.href : "";
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768)
@@ -32,7 +34,7 @@ const DefaultLayout = ({children}) => {
                         <Link href={"#main"} className="fn-logo">FXNULL .</Link>
                         <p className="fn-text">2024 PORTFOLIO</p>
                     </div>
-                    {isMobile ? (
+                    {isMobile && currentURL ? (
                         <>
                             <div className="fn-header-right" onClick={clickMenuModal}>☰</div>
                             {showMenuModal && <MobileMenuModal clickMenuModal={clickMenuModal} />}
